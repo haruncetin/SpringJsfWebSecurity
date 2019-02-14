@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         
         http.formLogin()
-                .loginPage("/login.xhtml")
+                .loginPage("/login.xhtml").permitAll()
                 .usernameParameter("j_username")
                 .passwordParameter("j_password")
                 .defaultSuccessUrl("/pages/home.xhtml")
@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login.xhtml");
         
         http.exceptionHandling()
-            .accessDeniedPage("/WEB-INF/errorpages/denied.xhtml");
+            .accessDeniedPage("/login.xhtml");
         
         http.csrf().disable();
 
@@ -68,5 +68,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService());
     }
-
 }

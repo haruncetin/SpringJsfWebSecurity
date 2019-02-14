@@ -17,7 +17,7 @@
         <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
         <param-value>/WEB-INF/resources</param-value>
     </context-param>
-<!--    <security-constraint>
+    <!--    <security-constraint>
         <display-name>Restrict direct access to XHTML files</display-name>
         <web-resource-collection>
             <web-resource-name>XHTML files</web-resource-name>
@@ -31,4 +31,8 @@
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
+    <context-param>
+        <param-name>primefaces.FONT_AWESOME</param-name>
+        <param-value>true</param-value>
+    </context-param>
 </web-app>
